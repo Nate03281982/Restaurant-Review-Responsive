@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 /**
  * Initialize leaflet map
  */
-initMap = () => {
+/*initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
       console.error(error);
@@ -35,9 +35,9 @@ initMap = () => {
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
   });
-}  
+}  */
  
-/* window.initMap = () => {
+window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
       console.error(error);
@@ -51,7 +51,7 @@ initMap = () => {
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }
   });
-} */
+} 
 
 /**
  * Get current restaurant from page URL.
@@ -182,7 +182,7 @@ createReviewHTML = (review) => {
 }
 
 /**
- * Add restaurant name to the breadcrumb navigation menu
+  * Add restaurant name to the breadcrumb navigation menu
  */
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
@@ -190,6 +190,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 }
+
 
 /**
  * Get a parameter by name from page URL.
