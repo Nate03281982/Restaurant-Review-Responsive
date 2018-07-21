@@ -185,6 +185,14 @@ createReviewHTML = (review) => {
   * Add restaurant name to the breadcrumb navigation menu
  */
 fillBreadcrumb = (restaurant=self.restaurant) => {
+    fillCounter++;
+    console.log('counter is at: ', fillCounter)
+  
+    if( fillCounter > 2) {
+      return;
+    }
+  
+  
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
