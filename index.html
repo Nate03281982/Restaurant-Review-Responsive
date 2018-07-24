@@ -33,7 +33,26 @@
         </select>
       </div>
       <ul id="restaurants-list"></ul>
-    </section>
+    </sec<main id="maincontent">
+      <section id="map-container" aria-hidden="true">
+        <div id="map" role="application" aria-label="Map showing the restaurant locations"></div>
+      </section>
+      <section>
+        <div class="filter-options">
+          <h2>Filter Results</h2>
+          <select id="neighborhoods-select" aria-label="Filter by Neighborhoods" name="neighborhoods" onchange="updateRestaurants()"
+            tabindex="1">
+            <option value="all">All Neighborhoods</option>
+          </select>
+          <select id="cuisines-select" aria-label="Filter by Cuisines" name="cuisines" onchange="updateRestaurants()" tabindex="2">
+            <option value="all">All Cuisines</option>
+          </select>
+        </div>
+        <!-- Photos and details of restaurants -->
+        <ul id="restaurants-list" aria-label="List of restaurants" tabindex="3"></ul>
+      </section>
+    </main>
+  tion>
   </main>
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
