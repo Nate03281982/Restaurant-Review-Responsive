@@ -1,12 +1,12 @@
 let restaurant;
 var newMap;
 
-var fillCounter = 0; 
+var fillCounter = 0;
 
 /**
  * Initialize map as soon as the page is loaded.
  */
-document.addEventListener('DOMContentLoaded', (event) => {  
+document.addEventListener('DOMContentLoaded', (event) => {
   initMap();
 });
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   });
 }  */
- 
+
 window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
@@ -51,7 +51,7 @@ window.initMap = () => {
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }
   });
-} 
+}
 
 /**
  * Get current restaurant from page URL.
@@ -85,7 +85,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   fillCounter++;
   console.log('counter is at: ', fillCounter)
 
-  if( fillCounter > 1) {
+  if (fillCounter > 1) {
     return;
   }
 
@@ -143,7 +143,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     title.innerHTML = 'Reviews';
     container.appendChild(title);
   }
-  
+
   if (!reviews) {
     const noReviews = document.createElement('p');
     noReviews.innerHTML = 'No reviews yet!';
@@ -182,17 +182,17 @@ createReviewHTML = (review) => {
 }
 
 /**
-  * Add restaurant name to the breadcrumb navigation menu
+ * Add restaurant name to the breadcrumb navigation menu
  */
-fillBreadcrumb = (restaurant=self.restaurant) => {
-    fillCounter++;
-    console.log('counter is at: ', fillCounter)
-  
-    if( fillCounter > 2) {
-      return;
-    }
-  
-  
+fillBreadcrumb = (restaurant = self.restaurant) => {
+  fillCounter++;
+  console.log('counter is at: ', fillCounter)
+
+  if (fillCounter > 2) {
+    return;
+  }
+
+
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;

@@ -2,7 +2,7 @@ let staticCacheName = "restaurants-cache";
 let urlsToCache = [
   "./",
   "./sw_registration.js",
-  "index.html",  
+  "index.html",
   "restaurant.html",
   "css/styles.css",
   "data/restaurants.json",
@@ -23,19 +23,19 @@ let urlsToCache = [
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
-  caches.open(staticCacheName)
+    caches.open(staticCacheName)
     .then(function (cache) {
       console.log('Opened cache');
       return cache.addAll(urlsToCache);
     })
-);
+  );
 })
 
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(cacheNames => Promise.all(cacheNames.map(cache => {
       if (cache !== staticCacheName) {
-         return caches.delete(cache);
+        return caches.delete(cache);
       }
     })))
   )
@@ -46,7 +46,7 @@ self.addEventListener("fetch", event => {
     event.respondWith(
       caches.match(event.request).then(response => {
         if (response) {
-          
+
           return response;
         }
         return fetch(event.request);
