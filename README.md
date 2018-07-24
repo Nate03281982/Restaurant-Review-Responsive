@@ -18,4 +18,4 @@ The app displays all the restaurants in the catalog.  The user can use search to
 
 How to review code:
 
-You can review my code at https://github.com/Nate03281982/Resturant-Review-Nate
+You can review my code at https://github.com/Nate03281982/Restaurant-Review-Responsive
